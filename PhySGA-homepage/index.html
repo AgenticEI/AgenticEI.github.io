@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PhySGA is a physics-space grounded agentic framework for generalizable and interactive 3D object composition.">
+  <meta name="keywords" content="PhySGA, 3D object composition, embodied AI, agentic framework, physical simulation">
+  <meta property="og:title" content="PhySGA: A Physics-Space Grounded Agentic Framework">
+  <meta property="og:description" content="Interactive 3D object composition through agent exploration and physical simulation.">
+  <meta property="og:image" content="static/images/teaser.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PhySGA: A Physics-Space Grounded Agentic Framework">
+  <meta name="twitter:description" content="Interactive 3D object composition through agent exploration and physical simulation.">
+  <meta name="twitter:image" content="static/images/teaser.png">
+
+  <title>PhySGA: A Physics-Space Grounded Agentic Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <script src="static/js/index.js" defer></script>
+</head>
+
+<body>
+  <div class="hero-motion" aria-hidden="true">
+    <svg viewBox="0 0 1600 5200" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trajectory-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6d2077" stop-opacity="0.08"></stop>
+          <stop offset="48%" stop-color="#8d4a98" stop-opacity="0.42"></stop>
+          <stop offset="100%" stop-color="#6d2077" stop-opacity="0.04"></stop>
+        </linearGradient>
+      </defs>
+
+      <path class="motion-path motion-path-one" d="M-120 330 C190 80 430 440 730 190 S1240 -50 1710 160"></path>
+      <path class="motion-path motion-path-two" d="M-80 -20 C250 220 510 -90 840 90 S1260 440 1690 230"></path>
+      <path class="motion-path motion-path-three" d="M60 550 C390 340 650 490 930 240 S1310 0 1660 50"></path>
+
+      <path class="motion-path motion-path-two" d="M-130 980 C210 760 430 1120 760 900 S1260 650 1710 850"></path>
+      <path class="motion-path motion-path-one" d="M-90 1290 C280 1040 560 1390 900 1160 S1320 980 1690 1080"></path>
+      <path class="motion-path motion-path-three" d="M100 1510 C390 1280 690 1580 980 1370 S1360 1160 1640 1250"></path>
+
+      <path class="motion-path motion-path-one" d="M-110 1810 C260 1580 500 1950 820 1710 S1280 1510 1700 1660"></path>
+      <path class="motion-path motion-path-two" d="M-60 2100 C310 1860 610 2200 930 1990 S1320 1810 1670 1900"></path>
+
+      <path class="motion-path motion-path-three" d="M-120 2450 C180 2200 470 2580 790 2340 S1240 2130 1710 2300"></path>
+      <path class="motion-path motion-path-one" d="M-70 2760 C250 2530 590 2870 900 2660 S1320 2440 1680 2540"></path>
+      <path class="motion-path motion-path-two" d="M80 3010 C390 2790 690 3090 1010 2890 S1380 2700 1660 2790"></path>
+
+      <path class="motion-path motion-path-two" d="M-130 3330 C220 3090 460 3460 790 3230 S1270 3020 1710 3160"></path>
+      <path class="motion-path motion-path-three" d="M-80 3650 C280 3420 590 3770 920 3540 S1350 3340 1690 3450"></path>
+      <path class="motion-path motion-path-one" d="M110 3890 C410 3700 720 3990 1010 3800 S1370 3600 1650 3690"></path>
+
+      <path class="motion-path motion-path-one" d="M-120 4230 C200 4010 500 4360 820 4130 S1280 3940 1710 4070"></path>
+      <path class="motion-path motion-path-two" d="M-70 4560 C270 4320 600 4680 930 4450 S1340 4260 1680 4360"></path>
+      <path class="motion-path motion-path-three" d="M70 4860 C390 4650 700 4960 1010 4760 S1380 4550 1650 4640"></path>
+      <path class="motion-path motion-path-one" d="M-100 5120 C250 4930 560 5230 890 5030 S1320 4860 1700 4950"></path>
+
+      <circle class="motion-node motion-node-one" cx="300" cy="250" r="5"></circle>
+      <circle class="motion-node motion-node-two" cx="1045" cy="65" r="4"></circle>
+      <circle class="motion-node motion-node-three" cx="1350" cy="1080" r="3.5"></circle>
+      <circle class="motion-node motion-node-one" cx="420" cy="1380" r="4"></circle>
+      <circle class="motion-node motion-node-two" cx="1180" cy="1740" r="5"></circle>
+      <circle class="motion-node motion-node-three" cx="270" cy="2260" r="3.5"></circle>
+      <circle class="motion-node motion-node-one" cx="980" cy="2680" r="4.5"></circle>
+      <circle class="motion-node motion-node-two" cx="1380" cy="3220" r="4"></circle>
+      <circle class="motion-node motion-node-three" cx="360" cy="3660" r="5"></circle>
+      <circle class="motion-node motion-node-one" cx="1120" cy="4140" r="3.5"></circle>
+      <circle class="motion-node motion-node-two" cx="540" cy="4620" r="4"></circle>
+      <circle class="motion-node motion-node-three" cx="1360" cy="4970" r="5"></circle>
+    </svg>
+  </div>
+
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="title-line"><span class="title-mark">PhySGA</span>: A Physics-Space Grounded</span>
+              <span class="title-line">Agentic Framework for Generalizable and</span>
+              <span class="title-line">Interactive 3D Composition</span>
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://matthew-lyu.github.io/">Weichen Lyu</a><sup>1,*</sup>,</span>
+              <span class="author-block"><a href="https://xiac20.github.io/">Chong Xia</a><sup>1,*,‡</sup>,</span>
+              <span class="author-block"><a href="https://dongmingyu111.github.io/">Mingyu Dong</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://gaolon.github.io/xulong/">Long Xu</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://shengjun-zhang.github.io/">Shengjun Zhang</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://duanyueqi.github.io/">Yueqi Duan</a><sup>1,†</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors affiliations">
+              <span class="author-block"><sup>1</sup>Tsinghua University</span>
+              <span class="author-block"><sup>2</sup>Zhejiang University</span>
+              <br>
+              <span class="eql-cntrb"><small><sup>*</sup> Equal contribution. <sup>‡</sup> Project Leader. <sup>†</sup> Corresponding author.</small></span>
+            </div>
+
+            <div class="column has-text-centered publication-links">
+              <span class="link-block">
+                <a href="https://github.com/AgenticEI/PhySGA" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" aria-disabled="true" title="arXiv link coming soon" class="external-link button is-normal is-rounded is-dark placeholder-link">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#demo-video" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-circle-play"></i></span>
+                  <span>Video</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser reveal">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/teaser.svg?v=20261014-4"
+             alt="PhySGA teaser showing interactive rigid, articulated, and deformable 3D object composition">
+        <h2 class="subtitle has-text-justified teaser-caption">
+          <strong>PhySGA</strong> grounds 3D object composition directly in physical space. Its agents construct, simulate, observe, and refine rigid, articulated, and deformable objects until they form the stable relations specified by the instruction.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser reveal">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="" id="demo-video" autoplay controls muted loop height="100%" preload="metadata">
+          <source src="static/videos/supplementary_video.mp4" type="video/mp4">
+          Your browser does not support the video element.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <span class="section-kicker">01 / Abstract</span>
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              3D object composition is pivotal to digital content creation and robot simulation, while also serving as a critical testbed for physical intelligence in foundation models. Previous methods either leverage large language models to directly predict object coordinates, or utilize generative diffusion priors to synthesize composite images for visual alignment, both of which rely on static priors in digital spaces. However, these methods consistently struggle with complex compositions such as precise hanging, gravity-driven settling, and hidden containment, as these tasks require interactive construction processes involving global planning, fine-grained alignment, and physical simulation. To address these challenges, we propose <strong>PhySGA</strong>, a <strong>Phy</strong>sics-<strong>S</strong>pace <strong>G</strong>rounded <strong>A</strong>gentic Framework for 3D composition via agent exploration and physical simulation, enabling the universal interactive assembly of rigid, articulated, and deformable objects. We design a collaborative feedforward-feedback architecture in which an Assembly Agent performs global step planning and coarse adjustment, while a Critic Agent diagnoses simulated outcomes and performs fine-grained closed-loop correction. Action Routers map semantic decisions onto executable physical primitives, and a task-specific Self-Evolving Skill Library distills successful interaction experience for reuse. Extensive experiments in Isaac Sim demonstrate that PhySGA substantially improves relation fidelity, physical plausibility, and visual quality over existing methods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <span class="section-kicker">02 / Architecture</span>
+          <h2 class="title is-3">Method Overview</h2>
+          <div class="content has-text-justified figure-block">
+            <img src="static/images/pipeline.svg" alt="Overview of the PhySGA framework">
+            <p>
+              <strong>Overview of PhySGA.</strong> The Assembly Agent uses geometric and kinematic reasoning to produce a global construction plan and execute metric-grounded coarse adjustments. Physical simulation then exposes contact and stability outcomes. The Critic Agent diagnoses failures and performs pixel-grounded fine-grained corrections, while Action Routers translate both agents' semantic decisions into executable simulator commands. A Self-Evolving Skill Library preserves successful interaction experience for later tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <span class="section-kicker">03 / Evaluation</span>
+          <h2 class="title is-3">Experimental Results</h2>
+          <div class="content results-block">
+            <img src="static/images/results1.png" alt="PhySGA experimental results, part one">
+            <img src="static/images/results2.png" alt="PhySGA experimental results, part two">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <span class="section-kicker">04 / Citation</span>
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code>@misc{lyu2026physga,
+  title  = {PhySGA: A Physics-Space Grounded Agentic Framework for
+            Generalizable and Interactive 3D Composition},
+  author = {Lyu, Weichen and Xia, Chong and Dong, Mingyu and Xu, Long and
+            Zhang, Shengjun and Duan, Yueqi},
+  year   = {2026},
+  note   = {Preprint}
+}</code></pre>
+    </div>
+  </section>
+</body>
+</html>
