@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="VISTA enables a meta-agent to actively explore the environment and develop executable robot harnesses, while keeping the underlying model parameters fixed.">
+  <meta name="theme-color" content="#70528e">
+  <meta property="og:title" content="VISTA — Active Exploration for Self-Improvement in Embodied Agents">
+  <meta property="og:description" content="Explore the environment. Develop the harness. Carry useful skills forward.">
+  <meta property="og:image" content="https://agenticei.github.io/VISTA-page/assets/overview.png">
+  <meta property="og:url" content="https://agenticei.github.io/VISTA-page/">
+  <meta property="og:type" content="website">
+  <title>VISTA | Active Exploration for Embodied Self-Improvement</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="VISTA home"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 5 16 27 28 5M10 5l6 11 6-11"/></svg><span>VISTA</span></a>
+      <div class="nav-links"><a href="#demo">Demo</a><a href="#method">Method</a><a href="#results">Results</a><a href="#citation">Cite</a></div>
+      <a class="nav-paper" href="assets/vista-paper.pdf" target="_blank" rel="noopener">Read paper <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top">
+      <p class="eyebrow"><span></span> Active exploration · Embodied self-improvement</p>
+      <div class="hero-wordmark" aria-hidden="true">VISTA<span class="wordmark-dot">.</span></div>
+      <h1>Active Exploration for Self-Improvement<br class="desktop-break"> in Embodied Agents</h1>
+      <p class="hero-lead">A coding agent that <strong>explores the environment</strong>, develops the robot’s harness,<br class="desktop-break"> and carries useful skills into the next iteration.</p>
+      <div class="authors" aria-label="Authors">
+        <span>Zhang Zhang<sup>1,*</sup></span><span>Shengjun Zhang<sup>1,*,†</sup></span><span>Simin Huang<sup>1</sup></span><span>Min Chen<sup>1</sup></span><span>Chong Xia<sup>1</sup></span><span>Xin Fei<sup>2</sup></span><span>Yueqi Duan<sup>1,‡</sup></span>
+      </div>
+      <p class="affiliations"><span><sup>1</sup> Tsinghua University</span><span><sup>2</sup> National University of Singapore</span></p>
+      <p class="author-notes">* Equal contribution &nbsp; † Project Leader &nbsp; ‡ Corresponding author</p>
+      <div class="hero-actions">
+        <a class="button primary" href="assets/vista-paper.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l4 4v12H5zM12 2v5h4M8 11h5M8 14h5"/></svg>Paper</a>
+        <a class="button" href="https://github.com/AgenticEI/VISTA" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m6 5-4 5 4 5m8-10 4 5-4 5M11 3 9 17"/></svg>Code</a>
+        <a class="button quiet" href="#demo"><span class="play-icon" aria-hidden="true">▶</span>Watch video</a>
+      </div>
+      <p class="hero-facts"><span>Fixed model parameters</span><span>Executable skills</span><span>Three robotic benchmarks</span></p>
+    </section>
+
+    <section class="container demo-section" id="demo" aria-labelledby="demo-title">
+      <div class="section-topline"><h2 id="demo-title">VISTA in action</h2><span class="tiny-label">Project video · 1:29</span></div>
+      <div class="demo-stage overview-video-stage">
+        <video id="overview-video" controls playsinline preload="metadata" poster="assets/vista-overview.jpg" aria-label="VISTA project video with original audio and embedded subtitles"><source src="assets/VISTA.mp4" type="video/mp4"><source src="assets/vista-overview.webm" type="video/webm">Your browser cannot play this video. <a href="assets/VISTA.mp4">Download the project video.</a></video>
+      </div>
+    </section>
+
+    <section class="container section overview" id="overview">
+      <div class="section-kicker">01 <span>Experience becomes executable capability</span></div>
+      <div class="section-intro"><h2>Improve the harness.<br>Keep the models fixed.</h2><p>A robot’s harness organizes its instructions, skills, memory, and decision logic. VISTA makes this executable layer the object of improvement, combining learning-based policies, perception, motion planning, and feedback control.</p></div>
+      <div class="overview-copy"><p>A meta-agent starts with a harness version and its execution evidence. It can investigate the environment, develop new skills, and test candidate changes. Useful discoveries are written into the harness and validated through autonomous execution.</p><p>Versions and their supporting evidence remain available for later development. The result is a process in which embodied experience can accumulate as reusable code and procedural knowledge.</p></div>
+      <figure class="research-figure"><button class="figure-zoom" type="button" data-figure="assets/overview.png" data-caption="VISTA overview: the meta-agent actively explores the environment and develops executable harness versions." aria-label="Enlarge VISTA overview"><img src="assets/overview.png" width="1800" height="1096" loading="lazy" alt="VISTA overview with a meta-agent inspecting, developing, interacting, and revising a robot harness, followed by the Goal-t09 progression from 0 to 16 successes."><span class="zoom-label" aria-hidden="true">View full figure ↗</span></button><figcaption>The meta-agent develops the harness through code revision and interaction with the environment. The underlying models remain fixed. The example below the diagram follows the same Goal-t09 task shown in the case-study video.</figcaption></figure>
+    </section>
+
+    <section class="method-section" id="method"><div class="container section">
+      <div class="section-kicker">02 <span>The development loop</span></div>
+      <div class="section-intro"><h2>A meta-agent that can<br>run its own experiments.</h2><p>Active exploration gives the meta-agent control over how it obtains new evidence: what to observe, which operations to try, and what to investigate next.</p></div>
+      <div class="method-workbench">
+        <div class="method-tabs" role="tablist" aria-label="Harness development stages">
+          <button id="method-inspect" role="tab" aria-controls="method-detail" aria-selected="true" data-stage="inspect"><span>01</span>Inspect <span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button id="method-explore" role="tab" aria-controls="method-detail" aria-selected="false" tabindex="-1" data-stage="explore"><span>02</span>Explore <span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button id="method-develop" role="tab" aria-controls="method-detail" aria-selected="false" tabindex="-1" data-stage="develop"><span>03</span>Develop <span class="tab-arrow" aria-hidden="true">↗</span></button>
+          <button id="method-evaluate" role="tab" aria-controls="method-detail" aria-selected="false" tabindex="-1" data-stage="evaluate"><span>04</span>Evaluate <span class="tab-arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div class="method-detail" id="method-detail" role="tabpanel" aria-labelledby="method-inspect" tabindex="0"><span class="detail-label" id="stage-label">Start from a version and its evidence</span><h3 id="stage-title">Connect an outcome to the decisions that produced it.</h3><p id="stage-copy">Inspect the current harness together with observations, tool calls, robot actions, and task outcomes. Use this evidence to identify a behavior to improve and a hypothesis worth testing.</p><div class="stage-artifact"><span id="artifact-label">What carries forward</span><strong id="stage-artifact">A concrete development hypothesis</strong></div></div>
+      </div>
+      <div class="validation-note"><span class="note-mark" aria-hidden="true">↳</span><p><strong>Exploration informs development; autonomous evaluation checks the result.</strong> Submitted harnesses are frozen and evaluated without meta-agent intervention. Selection determines which version is retained.</p></div>
+    </div></section>
+
+    <section class="container section" id="case-study">
+      <div class="section-kicker">03 <span>Inside a harness revision</span></div>
+      <div class="section-intro"><h2>From a failed placement<br>to an inherited skill.</h2><p>Goal-t09 asks the robot to place a cream-cheese carton on a rack. Across development, the harness acquires a transport-and-release procedure, bounded recovery, and improved lift-state interpretation.</p></div>
+      <div class="case-video">
+      <div class="section-topline"><h3>The same scene. Three harness versions.</h3><span class="tiny-label">LIBERO · Goal-t09</span></div>
+      <div class="demo-stage">
+        <div class="version-labels">
+          <div><span class="version-name">Initial harness</span><strong>0<span>/16</span></strong></div>
+          <div><span class="version-name">Round 1</span><strong>9<span>/16</span></strong></div>
+          <div class="version-selected"><span class="version-name">Round 2</span><strong>16<span>/16</span></strong></div>
+        </div>
+        <video id="comparison-video" controls playsinline muted loop preload="metadata" poster="assets/goal-t09-matched-comparison.jpg" aria-label="Matched Goal-t09 execution: initial harness and round one fail on this scene, round two succeeds."><source src="assets/goal-t09-matched-comparison.webm" type="video/webm"><source src="assets/goal-t09-matched-comparison.mp4" type="video/mp4">Your browser cannot play this video. <a href="assets/goal-t09-matched-comparison.mp4">Download the comparison.</a></video>
+        <div class="rollout-outcomes"><span>This rollout: unsuccessful</span><span>This rollout: unsuccessful</span><span>This rollout: successful</span></div>
+      </div>
+      <p class="media-caption">Autonomous executions from the same initial scene. Counts above summarize all 16 evaluations for each version; Round 1 fails on this particular instance. Playback is 2× simulated physical time, with inference waiting time omitted and final frames held for comparison.</p>
+      </div>
+      <div class="case-timeline">
+        <article><span class="round-label">Initial</span><h3>0/16</h3><p>The initial harness does not complete the task in the evaluation matrix.</p></article>
+        <article><span class="round-label">Round 1</span><h3>9/16</h3><p>Add a placement skill, verify the lift before transport, and allow bounded re-localization and grasp retry.</p></article>
+        <article><span class="round-label">Round 2</span><h3>16/16</h3><p>Refine the lift reference and release behavior. Re-evaluating the same version again yields 16/16.</p></article>
+      </div>
+      <figure class="research-figure compact"><button class="figure-zoom" type="button" data-figure="assets/case-study.png" data-caption="Goal-t09 harness development. Local trials inside each round are distinct from the formal 16-instance evaluations." aria-label="Enlarge Goal-t09 development case"><img src="assets/case-study.png" width="1800" height="505" loading="lazy" alt="Goal-t09 development: build a rack-placement skill in round one, refine lift verification and release behavior in round two."><span class="zoom-label" aria-hidden="true">View full figure ↗</span></button><figcaption>Formal evaluation: 0/16 → 9/16 → 16/16. Values labeled “local” inside the figure refer to small tests during development.</figcaption></figure>
+      <details class="figure-details"><summary><span>How versions and discoveries accumulate</span><span aria-hidden="true">+</span></summary><p>Harness DAG records code lineage alongside experiments and selection decisions. Development can continue from retained versions, revisit earlier candidates, and reuse useful mechanisms.</p><figure class="research-figure compact"><button class="figure-zoom" type="button" data-figure="assets/harness-history.png" data-caption="Harness DAG and a representative Goal-t08 development trajectory." aria-label="Enlarge harness version graph"><img src="assets/harness-history.png" width="1800" height="784" loading="lazy" alt="Harness development patterns: linear refinement, branching search, and recombination, with a Goal-t08 example."><span class="zoom-label" aria-hidden="true">View full figure ↗</span></button><figcaption>The accompanying Goal-t08 example distinguishes internal tests from full formal evaluations.</figcaption></figure></details>
+    </section>
+
+    <section class="results-band" id="results"><div class="container section">
+      <div class="section-kicker">04 <span>Across three benchmarks</span></div>
+      <div class="section-intro"><h2>Different environments.<br>A shared path to improvement.</h2><p>Compare initial harnesses with the evolved versions selected for each task. Every reported version is evaluated through autonomous execution with fixed model parameters.</p></div>
+      <div class="result-highlights">
+        <article><h3>LIBERO-Pro</h3><p class="metric"><span>17.5</span><i aria-hidden="true">→</i><strong>95.0<small>%</small></strong></p><p>Eight T/S suites · 1,280 episodes per condition</p></article>
+        <article><h3>RoboTwin</h3><p class="metric"><span>48.5</span><i aria-hidden="true">→</i><strong>74.0<small>%</small></strong></p><p>50 tasks · 400 episodes per condition</p></article>
+        <article><h3>RoboCasa</h3><div class="casa-metrics"><p><span>Seen</span><b>16.4 → 24.2%</b></p><p><span>Unseen</span><b>4.7 → 13.3%</b></p></div><p>32 tasks · 256 episodes per category and condition</p></article>
+      </div>
+      <div class="result-tabs" role="tablist" aria-label="Benchmark results"><button id="tab-libero" role="tab" aria-selected="true" aria-controls="panel-libero" data-panel="libero">LIBERO-Pro</button><button id="tab-casa" role="tab" aria-selected="false" aria-controls="panel-casa" tabindex="-1" data-panel="casa">RoboCasa</button><button id="tab-twin" role="tab" aria-selected="false" aria-controls="panel-twin" tabindex="-1" data-panel="twin">RoboTwin</button></div>
+      <div class="result-panel" id="panel-libero" role="tabpanel" aria-labelledby="tab-libero" tabindex="0">
+        <div class="table-scroll" role="region" aria-label="LIBERO-Pro results" tabindex="0"><table><caption>Task success (%) · T: instruction redirection · S: position perturbation</caption><thead><tr><th scope="col">Suite</th><th scope="col">Initial H₀</th><th scope="col">Evolved</th><th scope="col">Gain (pp)</th></tr></thead><tbody>
+          <tr><th scope="row">Spatial-T</th><td>18.8</td><td><strong>98.1</strong></td><td>+79.4</td></tr><tr><th scope="row">Object-T</th><td>49.4</td><td><strong>100.0</strong></td><td>+50.6</td></tr><tr><th scope="row">Goal-T</th><td>16.3</td><td><strong>98.8</strong></td><td>+82.5</td></tr><tr><th scope="row">LIBERO-10-T</th><td>6.9</td><td><strong>89.4</strong></td><td>+82.5</td></tr><tr class="average"><th scope="row">Average-T</th><td>22.8</td><td><strong>96.6</strong></td><td>+73.8</td></tr>
+          <tr><th scope="row">Spatial-S</th><td>30.0</td><td><strong>100.0</strong></td><td>+70.0</td></tr><tr><th scope="row">Object-S</th><td>14.4</td><td><strong>99.4</strong></td><td>+85.0</td></tr><tr><th scope="row">Goal-S</th><td>4.4</td><td><strong>97.5</strong></td><td>+93.1</td></tr><tr><th scope="row">LIBERO-10-S</th><td>0.0</td><td><strong>76.9</strong></td><td>+76.9</td></tr><tr class="average"><th scope="row">Average-S</th><td>12.2</td><td><strong>93.4</strong></td><td>+81.3</td></tr>
+        </tbody></table></div>
+        <p class="table-note">Each suite contains 10 tasks with 16 evaluation episodes per task. The aggregate combines 224/1280 initial successes and 1216/1280 selected-version successes. Percentage-point gains are calculated before rounding.</p>
+      </div>
+      <div class="result-panel" id="panel-casa" role="tabpanel" aria-labelledby="tab-casa" tabindex="0" hidden><div class="table-scroll" role="region" aria-label="RoboCasa results" tabindex="0"><table><caption>Task success (%) · 16 tasks per category</caption><thead><tr><th scope="col">Category</th><th scope="col">Initial H₀</th><th scope="col">Evolved</th><th scope="col">Gain (pp)</th></tr></thead><tbody><tr><th scope="row">Composite Seen</th><td>16.4</td><td><strong>24.2</strong></td><td>+7.8</td></tr><tr><th scope="row">Composite Unseen</th><td>4.7</td><td><strong>13.3</strong></td><td>+8.6</td></tr></tbody></table></div><p class="table-note">Seen: 42/256 → 62/256. Unseen: 12/256 → 34/256. “Unseen” denotes the benchmark category; harnesses are selected separately for each task. Results use the adopted October 17, 2026 snapshot.</p></div>
+      <div class="result-panel" id="panel-twin" role="tabpanel" aria-labelledby="tab-twin" tabindex="0" hidden><div class="table-scroll" role="region" aria-label="RoboTwin results" tabindex="0"><table><caption>Task success (%) · 50 tasks × 4 scenes × 2 repetitions</caption><thead><tr><th scope="col">Tasks</th><th scope="col">Initial H₀</th><th scope="col">Evolved</th><th scope="col">Gain (pp)</th></tr></thead><tbody><tr><th scope="row">All 50 tasks</th><td>48.5</td><td><strong>74.0</strong></td><td>+25.5</td></tr></tbody></table></div><p class="table-note">194/400 → 296/400 successful autonomous episodes. Results correspond to the current task-specific selected harnesses.</p></div>
+      <details class="figure-details"><summary><span>Inspect the Goal-T development trajectory</span><span aria-hidden="true">+</span></summary><figure class="research-figure compact"><button class="figure-zoom" type="button" data-figure="assets/goal-evolution.png" data-caption="Goal-T: candidate outcomes in the heatmap, selected-version gains and aggregate success in the adjacent plots. Dotted cells retain a result after development ends." aria-label="Enlarge Goal-T heatmap"><img src="assets/goal-evolution.png" width="2971" height="1179" loading="lazy" alt="Ten Goal-T tasks across development rounds; eight achieve a 16/16 candidate evaluation within the first three rounds."><span class="zoom-label" aria-hidden="true">View full figure ↗</span></button><figcaption>Each heatmap cell reports candidate successes out of 16. The right-hand gains and lower curve use selected versions. Dotted cells carry a retained result after development ends; they are not additional evaluations.</figcaption></figure></details>
+    </div></section>
+
+    <section class="container section citation-section" id="citation">
+      <div class="section-kicker">05 <span>Resources</span></div>
+      <div class="resource-row"><div><h2>Explore VISTA.</h2><p>The method, experimental setup, and implementation.</p></div><div class="resource-links"><a class="button primary" href="assets/vista-paper.pdf" target="_blank" rel="noopener">Read the paper ↗</a><a class="button" href="https://github.com/AgenticEI/VISTA" target="_blank" rel="noopener noreferrer">View the code ↗</a></div></div>
+      <div class="bib-header"><h3>BibTeX</h3><button class="copy-button" id="copy-citation" type="button">Copy citation</button></div>
+      <pre><code id="bibtex">@misc{zhang2026vista,
+  title  = {VISTA: Active Exploration for Self-Improvement
+            in Embodied Agents},
+  author = {Zhang Zhang and Shengjun Zhang and Simin Huang
+            and Min Chen and Chong Xia and Xin Fei and Yueqi Duan},
+  year   = {2026},
+  url    = {https://agenticei.github.io/VISTA-page/}
+}</code></pre><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="container footer"><a class="brand" href="#top">VISTA<span aria-hidden="true">.</span></a><p>Explore. Develop. Evaluate. Improve.</p><a href="https://github.com/AgenticEI" target="_blank" rel="noopener noreferrer">AgenticEI ↗</a></footer>
+  <dialog id="figure-dialog" aria-labelledby="dialog-caption"><button class="dialog-close" type="button" aria-label="Close enlarged figure">×</button><img id="dialog-image" alt=""><p id="dialog-caption"></p><a id="dialog-original" href="assets/overview.png" target="_blank" rel="noopener">Open original image ↗</a></dialog>
+</body>
+</html>

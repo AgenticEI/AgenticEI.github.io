@@ -1,0 +1,179 @@
+{
+  "source_run": "libero-goal-recovered",
+  "type": "autonomous_execution",
+  "not_meta_live_exploration": true,
+  "selection": "Use the requested first formal cell c00001 in all three versions; no outcome-based cell replacement.",
+  "matched_initial_rgb_byte_identical": true,
+  "initial_rgb_sha256": "f0662fce65b1ea7f79baf180159c108fa1b6c3bcfd8291ad6cf262ecba8313a8",
+  "source_identity_verified_against": [
+    "evaluation/request.json",
+    "evaluation/complete.json",
+    "episode/episode.json",
+    "episode/result.json"
+  ],
+  "frames_verified_against": [
+    "rollout/public/trajectory_meta.json",
+    "rollout/public/trajectory.jsonl"
+  ],
+  "timing_note": "2x simulated physical time. Model inference, rendering, I/O, and scheduling wait times are not shown. An initial RGB frame is included. Terminal frames are held for 1.5 seconds; the comparison additionally holds shorter runs until the longest ends.",
+  "comparison": {
+    "file": "goal-t09-matched-comparison.mp4",
+    "poster": "goal-t09-matched-comparison.jpg",
+    "left_to_right": [
+      "baseline",
+      "r01",
+      "r02"
+    ],
+    "ffprobe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 768,
+          "height": 256,
+          "avg_frame_rate": "40/1",
+          "nb_frames": "516"
+        }
+      ],
+      "format": {
+        "duration": "12.900000",
+        "size": "650936"
+      }
+    }
+  },
+  "privacy": "Export includes RGB simulator frames only, no depth arrays, logs, dialogue, system paths, endpoints, or console overlays. File metadata stripped.",
+  "videos": [
+    {
+      "version": "baseline",
+      "evaluation_id": "goal-task-goal-t09-baseline",
+      "episode_id": "goal-task-goal-t09-baseline-c00001-a0001",
+      "cell_id": "c00001",
+      "task_id": "goal-t09",
+      "seed": 1000,
+      "repeat": 0,
+      "policy_seed": 30260911,
+      "harness_commit": "d6968cadfa26587ce63ae9837dcba1421ef620c7",
+      "official_success": false,
+      "validity": "valid",
+      "trace_complete": true,
+      "terminal_reason": "agent_stopped",
+      "env_steps": 455,
+      "input_rgb_frames": 456,
+      "aggregate_evaluation_successes": 0,
+      "aggregate_evaluation_episodes": 16,
+      "camera": "agentview",
+      "width": 256,
+      "height": 256,
+      "physical_control_frequency_hz": 20,
+      "playback_fps": 40,
+      "speed_relative_to_simulated_physical_time": 2,
+      "final_frame_hold_seconds": 1.5,
+      "mp4": "goal-t09-baseline-seed1000-repeat0.mp4",
+      "poster": "goal-t09-baseline-seed1000-repeat0.jpg",
+      "ffprobe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 256,
+            "height": 256,
+            "avg_frame_rate": "40/1",
+            "nb_frames": "516"
+          }
+        ],
+        "format": {
+          "duration": "12.900000",
+          "size": "333512"
+        }
+      }
+    },
+    {
+      "version": "r01",
+      "evaluation_id": "goal-task-goal-t09-r01",
+      "episode_id": "goal-task-goal-t09-r01-c00001-a0001",
+      "cell_id": "c00001",
+      "task_id": "goal-t09",
+      "seed": 1000,
+      "repeat": 0,
+      "policy_seed": 30260911,
+      "harness_commit": "165f27fa16cce5c412f5f834ae989b115d1836b4",
+      "official_success": false,
+      "validity": "valid",
+      "trace_complete": true,
+      "terminal_reason": "agent_stopped",
+      "env_steps": 252,
+      "input_rgb_frames": 253,
+      "aggregate_evaluation_successes": 9,
+      "aggregate_evaluation_episodes": 16,
+      "camera": "agentview",
+      "width": 256,
+      "height": 256,
+      "physical_control_frequency_hz": 20,
+      "playback_fps": 40,
+      "speed_relative_to_simulated_physical_time": 2,
+      "final_frame_hold_seconds": 1.5,
+      "mp4": "goal-t09-r01-seed1000-repeat0.mp4",
+      "poster": "goal-t09-r01-seed1000-repeat0.jpg",
+      "ffprobe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 256,
+            "height": 256,
+            "avg_frame_rate": "40/1",
+            "nb_frames": "313"
+          }
+        ],
+        "format": {
+          "duration": "7.825000",
+          "size": "195918"
+        }
+      }
+    },
+    {
+      "version": "r02",
+      "evaluation_id": "goal-task-goal-t09-r02",
+      "episode_id": "goal-task-goal-t09-r02-c00001-a0001",
+      "cell_id": "c00001",
+      "task_id": "goal-t09",
+      "seed": 1000,
+      "repeat": 0,
+      "policy_seed": 30260911,
+      "harness_commit": "af0732e950552588628508a5072a730c656140b2",
+      "official_success": true,
+      "validity": "valid",
+      "trace_complete": true,
+      "terminal_reason": "official_success",
+      "env_steps": 309,
+      "input_rgb_frames": 310,
+      "aggregate_evaluation_successes": 16,
+      "aggregate_evaluation_episodes": 16,
+      "camera": "agentview",
+      "width": 256,
+      "height": 256,
+      "physical_control_frequency_hz": 20,
+      "playback_fps": 40,
+      "speed_relative_to_simulated_physical_time": 2,
+      "final_frame_hold_seconds": 1.5,
+      "mp4": "goal-t09-r02-seed1000-repeat0.mp4",
+      "poster": "goal-t09-r02-seed1000-repeat0.jpg",
+      "ffprobe": {
+        "programs": [],
+        "streams": [
+          {
+            "codec_name": "h264",
+            "width": 256,
+            "height": 256,
+            "avg_frame_rate": "40/1",
+            "nb_frames": "370"
+          }
+        ],
+        "format": {
+          "duration": "9.250000",
+          "size": "165760"
+        }
+      }
+    }
+  ]
+}
